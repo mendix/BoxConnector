@@ -1,36 +1,55 @@
 # BoxConnector
-## Mendix BoxConnector ##
-The BoxConnector has been developed with Mendix Modeler 6.10.3.
 
-It provides a list of features to work with the Box platform.
+This project provides an easy to way to use [box.com](https://www.box.com) inside your
+Mendix application.
 
-## Installation ##
+## Installation
 
-Import the module Box connector in your project (from the Mendix AppStore or by downloading and exporting the module from this project)
+### Prerequisites
 
-## Dependencies ##
+1. Login to https://developer.box.com/
+1. Create and configure a Box Application. Details [here](https://docs.box.com/docs/app-users).
 
-The CommunityCommons module is required.
+### Dependencies
 
-## Getting Started ##
+The following modules are required:
+* [CommunityCommons](https://appstore.home.mendix.com/link/app/170/Mendix/Community-Commons-Function-Library).
+* [DeepLink](https://appstore.home.mendix.com/link/app/43/Mendix/Deep-link-module)
 
-Once you have imported the BoxConnector module in your mendix application, you will have Box connector available in the Toolbox. 
+### In your Box account
+1. Configure your application setting the redirect url as: ```https://<mendix_application_address>/link/grantaccess```
 
-In order to use any of these in your Mendix application, you can just drag and drop them to your microflow. Next step would be to provide all the arguments to the selected action and choose the output result name.
+### In your project
 
-## Remarks ##
-The BoxConnector module provides pages for Administrator to set up all required values to make connection with a Box Application.
+1. Import this module and its dependencies describe above.
+1. At this step, you will have available the Box connectors in the toolbox.
+1. In the BoxConnector module, use the ```BoxApplication_Overview``` page as an admin user to configure your Box connectors in your application.
+1. Use ```BoxAccounts_Overview``` page to associate Box accounts to Mendix
+  accounts, using the  *token* provided by the corresponding type of
+    Box account (user or service).
+1. In the project, make sure that BoxApplication entity is set with the same      redirect url.
+1. Configure the *DeepLink* module as follow: **INCLUDE SCREENSHOT**   
+1. **Enjoy it!**
+
+## Contributions
+
+Contributions are welcomed:
+
+1. open an issue about your topic
+1. fork, make a branch named starting with the issue number you are resolving and make a pull request to the master branch
+1. please add some tests for feature changes
+
+### Build Details
+
+This was built with the following:
+
+* Mendix Modeler 6.10.3
+* Eclipse IDE Neon
+
+### Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mendix/IBM-Watson-Connector-Kit/tags).
 
 ## License ##
 
-Licensed under the Apache license.
-
-## Developers notes ##
-
-git clone https://github.com/Nokavision/BoxConnector.git
-Open the BoxConnector.mpr in the Mendix Modeler.
-Use Deploy for Eclipse option (F6) and you can then import this module as an Eclipse project to the Eclipse IDE.
-
-## Version history ##
-
-None
+This project is licensed under the Apache License v2 (for details, see the [LICENSE](LICENSE-2.0.txt) file).
