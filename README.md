@@ -15,20 +15,20 @@ The following modules are required:
 * [CommunityCommons](https://appstore.home.mendix.com/link/app/170/Mendix/Community-Commons-Function-Library).
 * [DeepLink](https://appstore.home.mendix.com/link/app/43/Mendix/Deep-link-module)
 
-### In your Box account
-1. Configure your application setting the redirect url as: ```https://<mendix_application_address>/link/grantaccess```
+### In your Mendix project
 
-### In your project
-
-1. Import this module and its dependencies describe above.
+1. Install this module and its dependencies describe above.
 1. At this step, you will have available the Box connectors in the toolbox.
 1. In the BoxConnector module, use the ```BoxApplication_Overview``` page as an admin user to configure your Box connectors in your application.
 1. Use ```BoxAccounts_Overview``` page to associate Box accounts to Mendix
   accounts, using the  *token* provided by the corresponding type of
     Box account (user or service).
 1. In the project, make sure that BoxApplication entity is set with the same      redirect url.
-1. Configure the *DeepLink* module as follow: **INCLUDE SCREENSHOT**   
-1. **Enjoy it!**
+1. Configure the *DeepLink* module as follow:
+
+![](documentation/resources/step08_mendix_deeplink_config.jpg)
+
+**Enjoy it!**
 
 ## Contributions
 
