@@ -7,8 +7,7 @@ Mendix application.
 
 ### Prerequisites
 
-1. Login to https://developer.box.com/
-1. Create and configure a Box Application. Details [here](https://docs.box.com/docs/app-users).
+* [Create a Box application](documentation/prerequisite-box-setup.md)
 
 ### Dependencies
 
