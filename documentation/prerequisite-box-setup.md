@@ -34,7 +34,7 @@ In order to use the connectors it is required to have an acccount in the develop
 
 ![](resources/step06_box_set_redirect_url.jpg)
 
-1.You will to have generate a RSA keypair. The following commands may change depending on your OS:
+* You will to have generate a RSA keypair. The following commands may change depending on your OS:
 
 ```
 
