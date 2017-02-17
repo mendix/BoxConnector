@@ -39,11 +39,11 @@ The following modules are required:
 * Revoke token
 
 ### Collaboration Management
-* [Create collaboration](documentation/feature_documentation/File/CreateCollaboration.md)
-* [Delete collaboration](documentation/feature_documentation/File/DeleteCollaboration.md)  
-* [Get collaboration](documentation/feature_documentation/File/GetCollaboration.md)  
-* [Pending collaborations](documentation/feature_documentation/File/PendingCollaborations.md)  
-* [Update collaboration](documentation/feature_documentation/File/UpdateCollaboration.md)  
+* [Create collaboration](documentation/feature_documentation/Collaboration/CreateCollaboration.md)
+* [Delete collaboration](documentation/feature_documentation/Collaboration/DeleteCollaboration.md)  
+* [Get collaboration](documentation/feature_documentation/Collaboration/GetCollaboration.md)  
+* [Pending collaborations](documentation/feature_documentation/Collaboration/PendingCollaborations.md)  
+* [Update collaboration](documentation/feature_documentation/Collaboration/UpdateCollaboration.md)  
 
 ### File Management
 * [Copy file](documentation/feature_documentation/File/CopyFile.md)  
