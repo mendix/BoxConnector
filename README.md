@@ -65,7 +65,7 @@ The following modules are required:
 * [Restore file](documentation/feature_documentation/File/RestoreFile.md)
 * [Update file info](documentation/feature_documentation/File/UpdateFileInfo.md)
 * [Upload file](documentation/feature_documentation/File/UploadFile.md)
-* [Upload file version](documentation/feature_documentation/File/documentation/feature_documentation/File/UploadFileVersion.md)
+* [Upload file version](documentation/feature_documentation/File/UploadFileVersion.md)
 * [View versions](documentation/feature_documentation/File/ViewVersions.md)
 
 ### Folder Management
@@ -86,7 +86,7 @@ The following modules are required:
 * [Create metadata on file](documentation/feature_documentation/Metadata/CreateMetadataOnFile.md)
 * [Delete metadata on file](documentation/feature_documentation/Metadata/DeleteMetadataOnFile.md)
 * [Get metadata on file](documentation/feature_documentation/Metadata/GetMetadataOnFile.md)
-* [Update metadata on file](documentation/feature_documentation/Metadata/UpdateeMetadataOnFile.md)
+* [Update metadata on file](documentation/feature_documentation/Metadata/UpdateMetadataOnFile.md)
 
 ## Contributions
 Contributions are welcomed:
