@@ -28,11 +28,18 @@ The following modules are required:
 
 ![](documentation/resources/step08_mendix_deeplink_config.jpg)
 
-**Enjoy it!**
 
-### Features
 
-#### File Management
+## Features
+
+### Collaboration Management
+* [Create collaboration](documentation/feature_documentation/File/CreateCollaboration.md)
+* [Delete collaboration](documentation/feature_documentation/File/DeleteCollaboration.md)  
+* [Get collaboration](documentation/feature_documentation/File/GetCollaboration.md)  
+* [Pending collaborations](documentation/feature_documentation/File/PendingCollaborations.md)  
+* [Update collaboration](documentation/feature_documentation/File/UpdateCollaboration.md)  
+
+### File Management
 * [Copy file](documentation/feature_documentation/File/CopyFile.md)  
 * [Create file Shared Link](documentation/feature_documentation/File/CreateFileSharedLink.md)
 * [Delete file](documentation/feature_documentation/File/DeleteFile.md)
@@ -54,6 +61,27 @@ The following modules are required:
 * [Upload file](documentation/feature_documentation/File/UploadFile.md)
 * [Upload file version](documentation/feature_documentation/File/documentation/feature_documentation/File/UploadFileVersion.md)
 * [View versions](documentation/feature_documentation/File/ViewVersions.md)
+
+### Folder Management
+* [Copy folder](documentation/feature_documentation/Folder/CopyFolder.md)
+* [Create folder](documentation/feature_documentation/Folder/CreateFolder.md)
+* [Create folder shared link](documentation/feature_documentation/Folder/CreateFolderSharedLink.md)
+* [Delete folder](documentation/feature_documentation/Folder/DeleteFolder.md)
+* [Get folder collaborations](documentation/feature_documentation/Folder/GetFolderCollaborations.md)
+* [Get folder info](documentation/feature_documentation/Folder/GetFolderInfo.md)
+* [Get folder items](documentation/feature_documentation/Folder/GetFolderItems.md)
+* [Get trashed folder](documentation/feature_documentation/Folder/GetTrashedFolder.md)
+* [Get trashed items](documentation/feature_documentation/Folder/GetTrashedItems.md)
+* [Permanently delete folder](documentation/feature_documentation/Folder/PermanentlyDeleteFolder.md)
+* [Restore folder](documentation/feature_documentation/Folder/RestoreFolder.md)
+* [Update folder](documentation/feature_documentation/Folder/UpdateFolder.md)
+
+### Metadata Management
+* [Create metadata on file](documentation/feature_documentation/Metadata/CreateMetadataOnFile.md)
+* [Delete metadata on file](documentation/feature_documentation/Metadata/DeleteMetadataOnFile.md)
+* [Get metadata on file](documentation/feature_documentation/Metadata/GetMetadataOnFile.md)
+* [Update metadata on file](documentation/feature_documentation/Metadata/UpdateeMetadataOnFile.md)
+
 ## Contributions
 Contributions are welcomed:
 
