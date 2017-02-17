@@ -28,10 +28,67 @@ The following modules are required:
 
 ![](documentation/resources/step08_mendix_deeplink_config.jpg)
 
-**Enjoy it!**
+
+
+## Features
+
+### Authentication
+* Get token
+* Get token service accounts
+* Refresh token
+* Revoke token
+
+### Collaboration Management
+* [Create collaboration](documentation/feature_documentation/Collaboration/CreateCollaboration.md)
+* [Delete collaboration](documentation/feature_documentation/Collaboration/DeleteCollaboration.md)  
+* [Get collaboration](documentation/feature_documentation/Collaboration/GetCollaboration.md)  
+* [Pending collaborations](documentation/feature_documentation/Collaboration/PendingCollaborations.md)  
+* [Update collaboration](documentation/feature_documentation/Collaboration/UpdateCollaboration.md)  
+
+### File Management
+* [Copy file](documentation/feature_documentation/File/CopyFile.md)  
+* [Create file Shared Link](documentation/feature_documentation/File/CreateFileSharedLink.md)
+* [Delete file](documentation/feature_documentation/File/DeleteFile.md)
+* [Delete old version](documentation/feature_documentation/File/DeleteOldVersion.md)
+* [Download file](documentation/feature_documentation/File/DownloadFile.md)
+* [Get embed link](documentation/feature_documentation/File/GetEmbedLink.md)
+* [Get file collaborations](documentation/feature_documentation/File/GetFileCollaborations.md)
+* [Get file comments](documentation/feature_documentation/File/GetFileComments.md)
+* [Get file info](documentation/feature_documentation/File/GetFileInfo.md)
+* [Get file tasks](documentation/feature_documentation/File/GetFileTasks.md)
+* [Get thumbnail](documentation/feature_documentation/File/GetThumbnail.md)
+* [Get trashed file](documentation/feature_documentation/File/GetTrashedFile.md)
+* [Lock and unlock](documentation/feature_documentation/File/LockAndUnlock.md)
+* [Permanently delete file](documentation/feature_documentation/File/PermanentlyDeleteFile.md)
+* [Preflight check](documentation/feature_documentation/File/PreflightCheck.md)
+* [Promote version](documentation/feature_documentation/File/PromoteVersion.md)
+* [Restore file](documentation/feature_documentation/File/RestoreFile.md)
+* [Update file info](documentation/feature_documentation/File/UpdateFileInfo.md)
+* [Upload file](documentation/feature_documentation/File/UploadFile.md)
+* [Upload file version](documentation/feature_documentation/File/UploadFileVersion.md)
+* [View versions](documentation/feature_documentation/File/ViewVersions.md)
+
+### Folder Management
+* [Copy folder](documentation/feature_documentation/Folder/CopyFolder.md)
+* [Create folder](documentation/feature_documentation/Folder/CreateFolder.md)
+* [Create folder shared link](documentation/feature_documentation/Folder/CreateFolderSharedLink.md)
+* [Delete folder](documentation/feature_documentation/Folder/DeleteFolder.md)
+* [Get folder collaborations](documentation/feature_documentation/Folder/GetFolderCollaborations.md)
+* [Get folder info](documentation/feature_documentation/Folder/GetFolderInfo.md)
+* [Get folder items](documentation/feature_documentation/Folder/GetFolderItems.md)
+* [Get trashed folder](documentation/feature_documentation/Folder/GetTrashedFolder.md)
+* [Get trashed items](documentation/feature_documentation/Folder/GetTrashedItems.md)
+* [Permanently delete folder](documentation/feature_documentation/Folder/PermanentlyDeleteFolder.md)
+* [Restore folder](documentation/feature_documentation/Folder/RestoreFolder.md)
+* [Update folder](documentation/feature_documentation/Folder/UpdateFolder.md)
+
+### Metadata Management
+* [Create metadata on file](documentation/feature_documentation/Metadata/CreateMetadataOnFile.md)
+* [Delete metadata on file](documentation/feature_documentation/Metadata/DeleteMetadataOnFile.md)
+* [Get metadata on file](documentation/feature_documentation/Metadata/GetMetadataOnFile.md)
+* [Update metadata on file](documentation/feature_documentation/Metadata/UpdateMetadataOnFile.md)
 
 ## Contributions
-
 Contributions are welcomed:
 
 1. open an issue about your topic
