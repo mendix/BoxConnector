@@ -32,6 +32,12 @@ The following modules are required:
 
 ## Features
 
+### Authentication
+* Get token
+* Get token service accounts
+* Refresh token
+* Revoke token
+
 ### Collaboration Management
 * [Create collaboration](documentation/feature_documentation/File/CreateCollaboration.md)
 * [Delete collaboration](documentation/feature_documentation/File/DeleteCollaboration.md)  
