@@ -30,8 +30,31 @@ The following modules are required:
 
 **Enjoy it!**
 
-## Contributions
+### Features
 
+#### File Management
+* [Copy file](documentation/feature_documentation/File/CopyFile.md)  
+* [Create file Shared Link](documentation/feature_documentation/File/CreateFileSharedLink.md)
+* [Delete file](documentation/feature_documentation/File/DeleteFile.md)
+* [Delete old version](documentation/feature_documentation/File/DeleteOldVersion.md)
+* [Download file](documentation/feature_documentation/File/DownloadFile.md)
+* [Get embed link](documentation/feature_documentation/File/GetEmbedLink.md)
+* [Get file collaborations](documentation/feature_documentation/File/GetFileCollaborations.md)
+* [Get file comments](documentation/feature_documentation/File/GetFileComments.md)
+* [Get file info](documentation/feature_documentation/File/GetFileInfo.md)
+* [Get file tasks](documentation/feature_documentation/File/GetFileTasks.md)
+* [Get thumbnail](documentation/feature_documentation/File/GetThumbnail.md)
+* [Get trashed file](documentation/feature_documentation/File/GetTrashedFile.md)
+* [Lock and unlock](documentation/feature_documentation/File/LockAndUnlock.md)
+* [Permanently delete file](documentation/feature_documentation/File/PermanentlyDeleteFile.md)
+* [Preflight check](documentation/feature_documentation/File/PreflightCheck.md)
+* [Promote version](documentation/feature_documentation/File/PromoteVersion.md)
+* [Restore file](documentation/feature_documentation/File/RestoreFile.md)
+* [Update file info](documentation/feature_documentation/File/UpdateFileInfo.md)
+* [Upload file](documentation/feature_documentation/File/UploadFile.md)
+* [Upload file version](documentation/feature_documentation/File/documentation/feature_documentation/File/UploadFileVersion.md)
+* [View versions](documentation/feature_documentation/File/ViewVersions.md)
+## Contributions
 Contributions are welcomed:
 
 1. open an issue about your topic
