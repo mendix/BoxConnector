@@ -8,3 +8,4 @@
 /*.launch
 /*.lock
 proxies
+.DS_Store
