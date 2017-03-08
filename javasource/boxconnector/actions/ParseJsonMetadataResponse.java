@@ -12,7 +12,7 @@ package boxconnector.actions;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Iterator;
-import org.json.JSONObject;
+import com.mendix.thirdparty.org.json.JSONObject;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.webui.CustomJavaAction;
@@ -43,9 +43,9 @@ public class ParseJsonMetadataResponse extends CustomJavaAction<java.lang.Boolea
 
 		// BEGIN USER CODE
 		JSONObject json = new JSONObject(JsonResponse);
-		
+
 		Iterator<String> keys = json.keys();
-		
+
 		while(keys.hasNext() ) {
 			String key = keys.next();
 			BoxMetadata metadata = new BoxMetadata(getContext());
@@ -54,7 +54,7 @@ public class ParseJsonMetadataResponse extends CustomJavaAction<java.lang.Boolea
 			Object value = json.get(key);
 			if(value instanceof String) {
 				String strValue = (String) value;
-				
+
 				try {
 					Date date = null;
 					if(strValue.endsWith("Z")){
@@ -72,10 +72,10 @@ public class ParseJsonMetadataResponse extends CustomJavaAction<java.lang.Boolea
 				metadataValue.setfloatValue((Long)value);
 			}
 			metadataValue.setValue(metadata);
-			
+
 			MetadataList.add(metadata);
 		}
-		
+
 		return true;
 		// END USER CODE
 	}

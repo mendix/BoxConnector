@@ -23,7 +23,7 @@ import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
 import org.apache.commons.httpclient.methods.multipart.Part;
 import org.apache.commons.httpclient.methods.multipart.StringPart;
 import org.apache.commons.io.IOUtils;
-import org.json.JSONObject;
+import com.mendix.thirdparty.org.json.JSONObject;
 import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
@@ -57,7 +57,7 @@ public class UploadFileCall extends CustomJavaAction<java.lang.String>
 		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
 
 		// BEGIN USER CODE
-		
+
 		String URL = Constants.getBoxAPI_URL_Upload() + "/content" ;
 
 		HttpClient httpClient = new HttpClient();
@@ -83,16 +83,16 @@ public class UploadFileCall extends CustomJavaAction<java.lang.String>
 
 		postMethod.setRequestEntity(new MultipartRequestEntity(parts.toArray(new Part[0]), postMethod.getParams()));
 		httpClient.executeMethod(postMethod);
-		
+
 		int status = postMethod.getStatusCode();
-		
+
 		if(status == HttpURLConnection.HTTP_CREATED ) {
 			int BUFFER_SIZE = 8192;
 			InputStreamReader input = new InputStreamReader(postMethod.getResponseBodyAsStream(),	StandardCharsets.UTF_8);
-			
+
 			StringBuilder builder = new StringBuilder();
 			char[] buffer = new char[BUFFER_SIZE];
-	
+
 			try {
 				int read = input.read(buffer, 0, BUFFER_SIZE);
 				while (read != -1) {
@@ -105,9 +105,9 @@ public class UploadFileCall extends CustomJavaAction<java.lang.String>
 				input.close();
 			}
 			postMethod.releaseConnection();
-			
+
 			String jsonText = builder.toString();
-			
+
 			return jsonText;
 		} else {
 			postMethod.releaseConnection();

@@ -12,9 +12,9 @@ package boxconnector.actions;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import org.json.JSONObject;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
+import com.mendix.thirdparty.org.json.JSONObject;
 import com.mendix.webui.CustomJavaAction;
 import boxconnector.proxies.constants.Constants;
 
@@ -66,9 +66,9 @@ public class PreflightCheckCall extends CustomJavaAction<java.lang.Boolean>
 		OutputStream out = connection.getOutputStream();
 		out.write(params.toString().getBytes());
 		out.close();
-		
+
 		int status = connection.getResponseCode();
-		
+
 		connection.disconnect();
 
 		if (status == HttpURLConnection.HTTP_OK) {
