@@ -23,22 +23,22 @@ import static boxconnector.proxies.microflows.Microflows.getFolderInfoImpl;
  */
 public class GetFolderInfo extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
 
-	public GetFolderInfo(IContext context, IMendixObject BoxFolderParameter1)
+	public GetFolderInfo(IContext context, IMendixObject BoxFolderParam)
 	{
 		super(context);
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
+		this.__BoxFolderParam = BoxFolderParam;
 	}
 
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxFolder boxFolder = getFolderInfoImpl(getContext(), BoxFolderParameter1);
+		boxconnector.proxies.BoxFolder boxFolder = getFolderInfoImpl(getContext(), BoxFolderParam);
 		if (boxFolder != null)
 			return boxFolder.getMendixObject();
 		else

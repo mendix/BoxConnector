@@ -17,15 +17,15 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
 
 public class GetTokenServiceAccount extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxApplicationParameter1;
-	private boxconnector.proxies.BoxApplication BoxApplicationParameter1;
+	private IMendixObject __BoxApplicationParam;
+	private boxconnector.proxies.BoxApplication BoxApplicationParam;
 	private java.lang.String AppUserId;
 	private java.lang.String EntrepriseId;
 
-	public GetTokenServiceAccount(IContext context, IMendixObject BoxApplicationParameter1, java.lang.String AppUserId, java.lang.String EntrepriseId)
+	public GetTokenServiceAccount(IContext context, IMendixObject BoxApplicationParam, java.lang.String AppUserId, java.lang.String EntrepriseId)
 	{
 		super(context);
-		this.__BoxApplicationParameter1 = BoxApplicationParameter1;
+		this.__BoxApplicationParam = BoxApplicationParam;
 		this.AppUserId = AppUserId;
 		this.EntrepriseId = EntrepriseId;
 	}
@@ -33,10 +33,10 @@ public class GetTokenServiceAccount extends CustomJavaAction<IMendixObject>
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxApplicationParameter1 = __BoxApplicationParameter1 == null ? null : boxconnector.proxies.BoxApplication.initialize(getContext(), __BoxApplicationParameter1);
+		this.BoxApplicationParam = __BoxApplicationParam == null ? null : boxconnector.proxies.BoxApplication.initialize(getContext(), __BoxApplicationParam);
 
 		// BEGIN USER CODE
-		AccessToken token = getTokenServiceAccountImpl(getContext(), AppUserId, EntrepriseId, BoxApplicationParameter1);
+		AccessToken token = getTokenServiceAccountImpl(getContext(), AppUserId, EntrepriseId, BoxApplicationParam);
 		if (token != null) {
 			return token.getMendixObject();
 		} else {

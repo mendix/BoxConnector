@@ -33,20 +33,20 @@ import static boxconnector.proxies.microflows.Microflows.createCollaborationImpl
  */
 public class CreateCollaboration extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxItemParameter1;
-	private boxconnector.proxies.BoxItem BoxItemParameter1;
-	private IMendixObject __BoxUserParameter1;
-	private boxconnector.proxies.BoxUser BoxUserParameter1;
-	private boxconnector.proxies.CollaborationRole CollaborationRoleParameter1;
+	private IMendixObject __BoxItemParam;
+	private boxconnector.proxies.BoxItem BoxItemParam;
+	private IMendixObject __BoxUserParam;
+	private boxconnector.proxies.BoxUser BoxUserParam;
+	private boxconnector.proxies.CollaborationRole CollaborationRoleParam;
 	private java.lang.Boolean Notify;
 	private java.lang.Boolean CanViewPath;
 
-	public CreateCollaboration(IContext context, IMendixObject BoxItemParameter1, IMendixObject BoxUserParameter1, java.lang.String CollaborationRoleParameter1, java.lang.Boolean Notify, java.lang.Boolean CanViewPath)
+	public CreateCollaboration(IContext context, IMendixObject BoxItemParam, IMendixObject BoxUserParam, java.lang.String CollaborationRoleParam, java.lang.Boolean Notify, java.lang.Boolean CanViewPath)
 	{
 		super(context);
-		this.__BoxItemParameter1 = BoxItemParameter1;
-		this.__BoxUserParameter1 = BoxUserParameter1;
-		this.CollaborationRoleParameter1 = CollaborationRoleParameter1 == null ? null : boxconnector.proxies.CollaborationRole.valueOf(CollaborationRoleParameter1);
+		this.__BoxItemParam = BoxItemParam;
+		this.__BoxUserParam = BoxUserParam;
+		this.CollaborationRoleParam = CollaborationRoleParam == null ? null : boxconnector.proxies.CollaborationRole.valueOf(CollaborationRoleParam);
 		this.Notify = Notify;
 		this.CanViewPath = CanViewPath;
 	}
@@ -54,13 +54,13 @@ public class CreateCollaboration extends CustomJavaAction<IMendixObject>
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxItemParameter1 = __BoxItemParameter1 == null ? null : boxconnector.proxies.BoxItem.initialize(getContext(), __BoxItemParameter1);
+		this.BoxItemParam = __BoxItemParam == null ? null : boxconnector.proxies.BoxItem.initialize(getContext(), __BoxItemParam);
 
-		this.BoxUserParameter1 = __BoxUserParameter1 == null ? null : boxconnector.proxies.BoxUser.initialize(getContext(), __BoxUserParameter1);
+		this.BoxUserParam = __BoxUserParam == null ? null : boxconnector.proxies.BoxUser.initialize(getContext(), __BoxUserParam);
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxCollaboration boxC = createCollaborationImpl(getContext(), BoxItemParameter1,
-				BoxUserParameter1, CollaborationRoleParameter1, Notify, CanViewPath);
+		boxconnector.proxies.BoxCollaboration boxC = createCollaborationImpl(getContext(), BoxItemParam,
+				BoxUserParam, CollaborationRoleParam, Notify, CanViewPath);
 		if (boxC != null)
 			return boxC.getMendixObject();
 		else

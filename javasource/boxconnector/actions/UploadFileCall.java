@@ -23,7 +23,7 @@ import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
 import org.apache.commons.httpclient.methods.multipart.Part;
 import org.apache.commons.httpclient.methods.multipart.StringPart;
 import org.apache.commons.io.IOUtils;
-import org.json.JSONObject;
+import com.mendix.thirdparty.org.json.JSONObject;
 import com.mendix.core.Core;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
@@ -32,42 +32,42 @@ import boxconnector.proxies.constants.Constants;
 
 public class UploadFileCall extends CustomJavaAction<java.lang.String>
 {
-	private IMendixObject __AccessTokenParameter1;
-	private boxconnector.proxies.AccessToken AccessTokenParameter1;
+	private IMendixObject __AccessTokenParam;
+	private boxconnector.proxies.AccessToken AccessTokenParam;
 	private IMendixObject __FileToUpload;
 	private system.proxies.FileDocument FileToUpload;
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
 
-	public UploadFileCall(IContext context, IMendixObject AccessTokenParameter1, IMendixObject FileToUpload, IMendixObject BoxFolderParameter1)
+	public UploadFileCall(IContext context, IMendixObject AccessTokenParam, IMendixObject FileToUpload, IMendixObject BoxFolderParam)
 	{
 		super(context);
-		this.__AccessTokenParameter1 = AccessTokenParameter1;
+		this.__AccessTokenParam = AccessTokenParam;
 		this.__FileToUpload = FileToUpload;
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
+		this.__BoxFolderParam = BoxFolderParam;
 	}
 
 	@Override
 	public java.lang.String executeAction() throws Exception
 	{
-		this.AccessTokenParameter1 = __AccessTokenParameter1 == null ? null : boxconnector.proxies.AccessToken.initialize(getContext(), __AccessTokenParameter1);
+		this.AccessTokenParam = __AccessTokenParam == null ? null : boxconnector.proxies.AccessToken.initialize(getContext(), __AccessTokenParam);
 
 		this.FileToUpload = __FileToUpload == null ? null : system.proxies.FileDocument.initialize(getContext(), __FileToUpload);
 
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
 		// BEGIN USER CODE
-		
+
 		String URL = Constants.getBoxAPI_URL_Upload() + "/content" ;
 
 		HttpClient httpClient = new HttpClient();
 		PostMethod postMethod = new PostMethod(URL);
-		postMethod.setRequestHeader("Authorization", "Bearer " + this.AccessTokenParameter1.gettoken());
+		postMethod.setRequestHeader("Authorization", "Bearer " + this.AccessTokenParam.gettoken());
 
 		List<Part> parts = new ArrayList<Part>();
 
 		JSONObject parent = new JSONObject();
-		parent.put("id", this.BoxFolderParameter1.get_id());
+		parent.put("id", this.BoxFolderParam.get_id());
 
 		JSONObject attributes = new JSONObject();
 		attributes.put("parent", parent);
@@ -83,16 +83,16 @@ public class UploadFileCall extends CustomJavaAction<java.lang.String>
 
 		postMethod.setRequestEntity(new MultipartRequestEntity(parts.toArray(new Part[0]), postMethod.getParams()));
 		httpClient.executeMethod(postMethod);
-		
+
 		int status = postMethod.getStatusCode();
-		
+
 		if(status == HttpURLConnection.HTTP_CREATED ) {
 			int BUFFER_SIZE = 8192;
 			InputStreamReader input = new InputStreamReader(postMethod.getResponseBodyAsStream(),	StandardCharsets.UTF_8);
-			
+
 			StringBuilder builder = new StringBuilder();
 			char[] buffer = new char[BUFFER_SIZE];
-	
+
 			try {
 				int read = input.read(buffer, 0, BUFFER_SIZE);
 				while (read != -1) {
@@ -105,9 +105,9 @@ public class UploadFileCall extends CustomJavaAction<java.lang.String>
 				input.close();
 			}
 			postMethod.releaseConnection();
-			
+
 			String jsonText = builder.toString();
-			
+
 			return jsonText;
 		} else {
 			postMethod.releaseConnection();

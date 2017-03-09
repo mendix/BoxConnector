@@ -27,23 +27,23 @@ import static boxconnector.proxies.microflows.Microflows.createFolderImpl;
 public class CreateFolder extends CustomJavaAction<IMendixObject>
 {
 	private java.lang.String FolderName;
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
 
-	public CreateFolder(IContext context, java.lang.String FolderName, IMendixObject BoxFolderParameter1)
+	public CreateFolder(IContext context, java.lang.String FolderName, IMendixObject BoxFolderParam)
 	{
 		super(context);
 		this.FolderName = FolderName;
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
+		this.__BoxFolderParam = BoxFolderParam;
 	}
 
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxFolder boxFolder = createFolderImpl(getContext(), this.FolderName, this.BoxFolderParameter1);
+		boxconnector.proxies.BoxFolder boxFolder = createFolderImpl(getContext(), this.FolderName, this.BoxFolderParam);
 		if (boxFolder != null)
 			return boxFolder.getMendixObject();
 		else

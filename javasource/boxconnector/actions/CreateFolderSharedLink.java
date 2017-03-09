@@ -36,27 +36,27 @@ import com.mendix.webui.CustomJavaAction;
  */
 public class CreateFolderSharedLink extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
-	private IMendixObject __SharedLinkParameter1;
-	private boxconnector.proxies.SharedLink SharedLinkParameter1;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
+	private IMendixObject __SharedLinkParam;
+	private boxconnector.proxies.SharedLink SharedLinkParam;
 
-	public CreateFolderSharedLink(IContext context, IMendixObject BoxFolderParameter1, IMendixObject SharedLinkParameter1)
+	public CreateFolderSharedLink(IContext context, IMendixObject BoxFolderParam, IMendixObject SharedLinkParam)
 	{
 		super(context);
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
-		this.__SharedLinkParameter1 = SharedLinkParameter1;
+		this.__BoxFolderParam = BoxFolderParam;
+		this.__SharedLinkParam = SharedLinkParam;
 	}
 
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
-		this.SharedLinkParameter1 = __SharedLinkParameter1 == null ? null : boxconnector.proxies.SharedLink.initialize(getContext(), __SharedLinkParameter1);
+		this.SharedLinkParam = __SharedLinkParam == null ? null : boxconnector.proxies.SharedLink.initialize(getContext(), __SharedLinkParam);
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxFolder boxFolder = createFolderSharedLinkImpl(getContext(), BoxFolderParameter1, SharedLinkParameter1);
+		boxconnector.proxies.BoxFolder boxFolder = createFolderSharedLinkImpl(getContext(), BoxFolderParam, SharedLinkParam);
 		if (boxFolder != null)
 			return boxFolder.getMendixObject();
 		else

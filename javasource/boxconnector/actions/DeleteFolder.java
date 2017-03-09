@@ -25,24 +25,24 @@ import static boxconnector.proxies.microflows.Microflows.deleteFolderImpl;
  */
 public class DeleteFolder extends CustomJavaAction<java.lang.Boolean>
 {
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
 	private java.lang.Boolean Recursive;
 
-	public DeleteFolder(IContext context, IMendixObject BoxFolderParameter1, java.lang.Boolean Recursive)
+	public DeleteFolder(IContext context, IMendixObject BoxFolderParam, java.lang.Boolean Recursive)
 	{
 		super(context);
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
+		this.__BoxFolderParam = BoxFolderParam;
 		this.Recursive = Recursive;
 	}
 
 	@Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
 		// BEGIN USER CODE
-		Boolean result = deleteFolderImpl(getContext(), BoxFolderParameter1, this.Recursive);
+		Boolean result = deleteFolderImpl(getContext(), BoxFolderParam, this.Recursive);
 		return result;
 		// END USER CODE
 	}

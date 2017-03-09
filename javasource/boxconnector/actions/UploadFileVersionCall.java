@@ -31,45 +31,45 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
 
 public class UploadFileVersionCall extends CustomJavaAction<java.lang.String>
 {
-	private IMendixObject __AccessTokenParameter1;
-	private boxconnector.proxies.AccessToken AccessTokenParameter1;
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __AccessTokenParam;
+	private boxconnector.proxies.AccessToken AccessTokenParam;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 	private IMendixObject __FileToUpload;
 	private system.proxies.FileDocument FileToUpload;
 
-	public UploadFileVersionCall(IContext context, IMendixObject AccessTokenParameter1, IMendixObject BoxFileParameter1, IMendixObject FileToUpload)
+	public UploadFileVersionCall(IContext context, IMendixObject AccessTokenParam, IMendixObject BoxFileParam, IMendixObject FileToUpload)
 	{
 		super(context);
-		this.__AccessTokenParameter1 = AccessTokenParameter1;
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__AccessTokenParam = AccessTokenParam;
+		this.__BoxFileParam = BoxFileParam;
 		this.__FileToUpload = FileToUpload;
 	}
 
 	@Override
 	public java.lang.String executeAction() throws Exception
 	{
-		this.AccessTokenParameter1 = __AccessTokenParameter1 == null ? null : boxconnector.proxies.AccessToken.initialize(getContext(), __AccessTokenParameter1);
+		this.AccessTokenParam = __AccessTokenParam == null ? null : boxconnector.proxies.AccessToken.initialize(getContext(), __AccessTokenParam);
 
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		this.FileToUpload = __FileToUpload == null ? null : system.proxies.FileDocument.initialize(getContext(), __FileToUpload);
 
 		// BEGIN USER CODE
 		
-		String URL = Constants.getBoxAPI_URL_Upload() + "/" + this.BoxFileParameter1.get_id() + "/content" ;
+		String URL = Constants.getBoxAPI_URL_Upload() + "/" + this.BoxFileParam.get_id() + "/content" ;
 
 		HttpClient httpClient = new HttpClient();
 		PostMethod postMethod = new PostMethod(URL);
-		postMethod.setRequestHeader("Authorization", "Bearer " + this.AccessTokenParameter1);
+		postMethod.setRequestHeader("Authorization", "Bearer " + this.AccessTokenParam);
 
 		List<Part> parts = new ArrayList<Part>();
 		
 		String fileName = "";
-		if(this.BoxFileParameter1.getname() != null
-				&& !this.BoxFileParameter1.getname().isEmpty()) {
-			parts.add(new StringPart("name", this.BoxFileParameter1.getname()));
-			fileName = this.BoxFileParameter1.getname();
+		if(this.BoxFileParam.getname() != null
+				&& !this.BoxFileParam.getname().isEmpty()) {
+			parts.add(new StringPart("name", this.BoxFileParam.getname()));
+			fileName = this.BoxFileParam.getname();
 		}
 		
 		ByteArrayPartSource source = new ByteArrayPartSource(fileName,

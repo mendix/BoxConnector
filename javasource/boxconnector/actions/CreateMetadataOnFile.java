@@ -31,29 +31,29 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class CreateMetadataOnFile extends CustomJavaAction<java.lang.Boolean>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
-	private IMendixObject __BoxTemplateParameter1;
-	private boxconnector.proxies.BoxTemplate BoxTemplateParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
+	private IMendixObject __BoxTemplateParam;
+	private boxconnector.proxies.BoxTemplate BoxTemplateParam;
 	private boxconnector.proxies.MetadataScope Scope;
 
-	public CreateMetadataOnFile(IContext context, IMendixObject BoxFileParameter1, IMendixObject BoxTemplateParameter1, java.lang.String Scope)
+	public CreateMetadataOnFile(IContext context, IMendixObject BoxFileParam, IMendixObject BoxTemplateParam, java.lang.String Scope)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
-		this.__BoxTemplateParameter1 = BoxTemplateParameter1;
+		this.__BoxFileParam = BoxFileParam;
+		this.__BoxTemplateParam = BoxTemplateParam;
 		this.Scope = Scope == null ? null : boxconnector.proxies.MetadataScope.valueOf(Scope);
 	}
 
 	@Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
-		this.BoxTemplateParameter1 = __BoxTemplateParameter1 == null ? null : boxconnector.proxies.BoxTemplate.initialize(getContext(), __BoxTemplateParameter1);
+		this.BoxTemplateParam = __BoxTemplateParam == null ? null : boxconnector.proxies.BoxTemplate.initialize(getContext(), __BoxTemplateParam);
 
 		// BEGIN USER CODE
-		Boolean result = createMetadataOnFileImpl(getContext(), BoxFileParameter1, BoxTemplateParameter1, Scope);
+		Boolean result = createMetadataOnFileImpl(getContext(), BoxFileParam, BoxTemplateParam, Scope);
 		return result;
 		// END USER CODE
 	}

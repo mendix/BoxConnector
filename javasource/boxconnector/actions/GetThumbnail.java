@@ -31,16 +31,16 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class GetThumbnail extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 	private boxconnector.proxies.BoxThumbnailFormat Format;
 	private boxconnector.proxies.BoxThumbnailSize MinSize;
 	private boxconnector.proxies.BoxThumbnailSize MaxSize;
 
-	public GetThumbnail(IContext context, IMendixObject BoxFileParameter1, java.lang.String Format, java.lang.String MinSize, java.lang.String MaxSize)
+	public GetThumbnail(IContext context, IMendixObject BoxFileParam, java.lang.String Format, java.lang.String MinSize, java.lang.String MaxSize)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__BoxFileParam = BoxFileParam;
 		this.Format = Format == null ? null : boxconnector.proxies.BoxThumbnailFormat.valueOf(Format);
 		this.MinSize = MinSize == null ? null : boxconnector.proxies.BoxThumbnailSize.valueOf(MinSize);
 		this.MaxSize = MaxSize == null ? null : boxconnector.proxies.BoxThumbnailSize.valueOf(MaxSize);
@@ -49,10 +49,10 @@ public class GetThumbnail extends CustomJavaAction<IMendixObject>
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxThumbnail boxThumbnail = getThumbnailImpl(getContext(), BoxFileParameter1, Format, MaxSize, MinSize);
+		boxconnector.proxies.BoxThumbnail boxThumbnail = getThumbnailImpl(getContext(), BoxFileParam, Format, MaxSize, MinSize);
 		if(boxThumbnail != null) {
 			return boxThumbnail.getMendixObject();
 		} else {

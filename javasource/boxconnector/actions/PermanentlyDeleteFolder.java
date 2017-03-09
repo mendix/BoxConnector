@@ -23,22 +23,22 @@ import static boxconnector.proxies.microflows.Microflows.permanentlyDeleteFolder
  */
 public class PermanentlyDeleteFolder extends CustomJavaAction<java.lang.Boolean>
 {
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
 
-	public PermanentlyDeleteFolder(IContext context, IMendixObject BoxFolderParameter1)
+	public PermanentlyDeleteFolder(IContext context, IMendixObject BoxFolderParam)
 	{
 		super(context);
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
+		this.__BoxFolderParam = BoxFolderParam;
 	}
 
 	@Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
 		// BEGIN USER CODE
-		Boolean result = permanentlyDeleteFolderImpl(getContext(), BoxFolderParameter1);
+		Boolean result = permanentlyDeleteFolderImpl(getContext(), BoxFolderParam);
 		
 		return result;
 		// END USER CODE

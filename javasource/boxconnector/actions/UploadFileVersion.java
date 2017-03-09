@@ -31,27 +31,27 @@ import boxconnector.proxies.BoxFile;
  */
 public class UploadFileVersion extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 	private IMendixObject __FileToUpload;
 	private system.proxies.FileDocument FileToUpload;
 
-	public UploadFileVersion(IContext context, IMendixObject BoxFileParameter1, IMendixObject FileToUpload)
+	public UploadFileVersion(IContext context, IMendixObject BoxFileParam, IMendixObject FileToUpload)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__BoxFileParam = BoxFileParam;
 		this.__FileToUpload = FileToUpload;
 	}
 
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		this.FileToUpload = __FileToUpload == null ? null : system.proxies.FileDocument.initialize(getContext(), __FileToUpload);
 
 		// BEGIN USER CODE
-		BoxFile boxFile = uploadFileVersionImpl(getContext(), BoxFileParameter1, FileToUpload);
+		BoxFile boxFile = uploadFileVersionImpl(getContext(), BoxFileParam, FileToUpload);
 		if (boxFile != null) {
 			return boxFile.getMendixObject();
 		} else {

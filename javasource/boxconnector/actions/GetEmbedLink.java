@@ -20,22 +20,22 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class GetEmbedLink extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 
-	public GetEmbedLink(IContext context, IMendixObject BoxFileParameter1)
+	public GetEmbedLink(IContext context, IMendixObject BoxFileParam)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__BoxFileParam = BoxFileParam;
 	}
 
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxFile boxFile = getEmbedLinkImpl(getContext(), BoxFileParameter1);
+		boxconnector.proxies.BoxFile boxFile = getEmbedLinkImpl(getContext(), BoxFileParam);
 		
 		if (boxFile != null)
 			return boxFile.getMendixObject();

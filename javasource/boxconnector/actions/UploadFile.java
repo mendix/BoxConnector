@@ -30,14 +30,14 @@ public class UploadFile extends CustomJavaAction<IMendixObject>
 {
 	private IMendixObject __FileToUpload;
 	private system.proxies.FileDocument FileToUpload;
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
 
-	public UploadFile(IContext context, IMendixObject FileToUpload, IMendixObject BoxFolderParameter1)
+	public UploadFile(IContext context, IMendixObject FileToUpload, IMendixObject BoxFolderParam)
 	{
 		super(context);
 		this.__FileToUpload = FileToUpload;
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
+		this.__BoxFolderParam = BoxFolderParam;
 	}
 
 	@Override
@@ -45,10 +45,10 @@ public class UploadFile extends CustomJavaAction<IMendixObject>
 	{
 		this.FileToUpload = __FileToUpload == null ? null : system.proxies.FileDocument.initialize(getContext(), __FileToUpload);
 
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
 		// BEGIN USER CODE
-		BoxFile boxFile = uploadFileImpl(getContext(), FileToUpload, BoxFolderParameter1);
+		BoxFile boxFile = uploadFileImpl(getContext(), FileToUpload, BoxFolderParam);
 		if(boxFile != null) {
 			return boxFile.getMendixObject();
 		} else {
