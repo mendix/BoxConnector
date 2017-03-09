@@ -32,8 +32,8 @@ import static boxconnector.proxies.microflows.Microflows.updateFolderImpl;
  */
 public class UpdateFolder extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
 	private java.lang.String UpdateName;
 	private java.lang.String UpdateDescription;
 	private IMendixObject __UpdateParentFolder;
@@ -46,10 +46,10 @@ public class UpdateFolder extends CustomJavaAction<IMendixObject>
 	private java.util.List<IMendixObject> __UpdateTags;
 	private java.util.List<boxconnector.proxies.TagValue> UpdateTags;
 
-	public UpdateFolder(IContext context, IMendixObject BoxFolderParameter1, java.lang.String UpdateName, java.lang.String UpdateDescription, IMendixObject UpdateParentFolder, IMendixObject UpdateSharedLink, IMendixObject UpdateFolderUploadEmail, java.lang.String UpdateSyncState, java.util.List<IMendixObject> UpdateTags)
+	public UpdateFolder(IContext context, IMendixObject BoxFolderParam, java.lang.String UpdateName, java.lang.String UpdateDescription, IMendixObject UpdateParentFolder, IMendixObject UpdateSharedLink, IMendixObject UpdateFolderUploadEmail, java.lang.String UpdateSyncState, java.util.List<IMendixObject> UpdateTags)
 	{
 		super(context);
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
+		this.__BoxFolderParam = BoxFolderParam;
 		this.UpdateName = UpdateName;
 		this.UpdateDescription = UpdateDescription;
 		this.__UpdateParentFolder = UpdateParentFolder;
@@ -62,7 +62,7 @@ public class UpdateFolder extends CustomJavaAction<IMendixObject>
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
 		this.UpdateParentFolder = __UpdateParentFolder == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __UpdateParentFolder);
 
@@ -76,7 +76,7 @@ public class UpdateFolder extends CustomJavaAction<IMendixObject>
 				this.UpdateTags.add(boxconnector.proxies.TagValue.initialize(getContext(), __UpdateTagsElement));
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxFolder boxFolder = updateFolderImpl(getContext(), BoxFolderParameter1, UpdateName, UpdateDescription, UpdateParentFolder, UpdateSharedLink, UpdateFolderUploadEmail, UpdateSyncState, UpdateTags);
+		boxconnector.proxies.BoxFolder boxFolder = updateFolderImpl(getContext(), BoxFolderParam, UpdateName, UpdateDescription, UpdateParentFolder, UpdateSharedLink, UpdateFolderUploadEmail, UpdateSyncState, UpdateTags);
 
 		if (boxFolder != null)
 			return boxFolder.getMendixObject();
