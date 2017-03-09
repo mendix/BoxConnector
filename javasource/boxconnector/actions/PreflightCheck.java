@@ -36,27 +36,27 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class PreflightCheck extends CustomJavaAction<java.lang.Boolean>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
 
-	public PreflightCheck(IContext context, IMendixObject BoxFileParameter1, IMendixObject BoxFolderParameter1)
+	public PreflightCheck(IContext context, IMendixObject BoxFileParam, IMendixObject BoxFolderParam)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
+		this.__BoxFileParam = BoxFileParam;
+		this.__BoxFolderParam = BoxFolderParam;
 	}
 
 	@Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
 		// BEGIN USER CODE
-		Boolean result = preflightCheckImpl(getContext(), BoxFileParameter1, BoxFolderParameter1);
+		Boolean result = preflightCheckImpl(getContext(), BoxFileParam, BoxFolderParam);
 		return result;
 		// END USER CODE
 	}

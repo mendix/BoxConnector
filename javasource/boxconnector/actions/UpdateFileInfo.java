@@ -29,8 +29,8 @@ import static boxconnector.proxies.microflows.Microflows.updateFileInfoImpl;
  */
 public class UpdateFileInfo extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 	private java.lang.String UpdateName;
 	private java.lang.String UpdateDescription;
 	private IMendixObject __UpdateParentFolder;
@@ -40,10 +40,10 @@ public class UpdateFileInfo extends CustomJavaAction<IMendixObject>
 	private java.util.List<IMendixObject> __UpdateTags;
 	private java.util.List<boxconnector.proxies.TagValue> UpdateTags;
 
-	public UpdateFileInfo(IContext context, IMendixObject BoxFileParameter1, java.lang.String UpdateName, java.lang.String UpdateDescription, IMendixObject UpdateParentFolder, IMendixObject UpdateSharedLink, java.util.List<IMendixObject> UpdateTags)
+	public UpdateFileInfo(IContext context, IMendixObject BoxFileParam, java.lang.String UpdateName, java.lang.String UpdateDescription, IMendixObject UpdateParentFolder, IMendixObject UpdateSharedLink, java.util.List<IMendixObject> UpdateTags)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__BoxFileParam = BoxFileParam;
 		this.UpdateName = UpdateName;
 		this.UpdateDescription = UpdateDescription;
 		this.__UpdateParentFolder = UpdateParentFolder;
@@ -54,7 +54,7 @@ public class UpdateFileInfo extends CustomJavaAction<IMendixObject>
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		this.UpdateParentFolder = __UpdateParentFolder == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __UpdateParentFolder);
 
@@ -66,7 +66,7 @@ public class UpdateFileInfo extends CustomJavaAction<IMendixObject>
 				this.UpdateTags.add(boxconnector.proxies.TagValue.initialize(getContext(), __UpdateTagsElement));
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxFile boxFile = updateFileInfoImpl(getContext(), BoxFileParameter1, UpdateParentFolder, UpdateSharedLink, UpdateName, UpdateDescription, UpdateTags);
+		boxconnector.proxies.BoxFile boxFile = updateFileInfoImpl(getContext(), BoxFileParam, UpdateParentFolder, UpdateSharedLink, UpdateName, UpdateDescription, UpdateTags);
 		if (boxFile != null)
 			return boxFile.getMendixObject();
 		else

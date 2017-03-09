@@ -33,17 +33,17 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class UpdateCollaboration extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxCollaborationParameter1;
-	private boxconnector.proxies.BoxCollaboration BoxCollaborationParameter1;
+	private IMendixObject __BoxCollaborationParam;
+	private boxconnector.proxies.BoxCollaboration BoxCollaborationParam;
 	private boxconnector.proxies.CollaborationRole UpdateRole;
 	private boxconnector.proxies.CollaborationStatus UpdateStatus;
 	private java.util.Date UpdateExpiresAt;
 	private boxconnector.proxies.BooleanParameter UpdateCanViewPath;
 
-	public UpdateCollaboration(IContext context, IMendixObject BoxCollaborationParameter1, java.lang.String UpdateRole, java.lang.String UpdateStatus, java.util.Date UpdateExpiresAt, java.lang.String UpdateCanViewPath)
+	public UpdateCollaboration(IContext context, IMendixObject BoxCollaborationParam, java.lang.String UpdateRole, java.lang.String UpdateStatus, java.util.Date UpdateExpiresAt, java.lang.String UpdateCanViewPath)
 	{
 		super(context);
-		this.__BoxCollaborationParameter1 = BoxCollaborationParameter1;
+		this.__BoxCollaborationParam = BoxCollaborationParam;
 		this.UpdateRole = UpdateRole == null ? null : boxconnector.proxies.CollaborationRole.valueOf(UpdateRole);
 		this.UpdateStatus = UpdateStatus == null ? null : boxconnector.proxies.CollaborationStatus.valueOf(UpdateStatus);
 		this.UpdateExpiresAt = UpdateExpiresAt;
@@ -53,10 +53,10 @@ public class UpdateCollaboration extends CustomJavaAction<IMendixObject>
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxCollaborationParameter1 = __BoxCollaborationParameter1 == null ? null : boxconnector.proxies.BoxCollaboration.initialize(getContext(), __BoxCollaborationParameter1);
+		this.BoxCollaborationParam = __BoxCollaborationParam == null ? null : boxconnector.proxies.BoxCollaboration.initialize(getContext(), __BoxCollaborationParam);
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxCollaboration boxC = updateCollaborationImpl(getContext(), BoxCollaborationParameter1, UpdateStatus, UpdateCanViewPath, UpdateRole, UpdateExpiresAt);
+		boxconnector.proxies.BoxCollaboration boxC = updateCollaborationImpl(getContext(), BoxCollaborationParam, UpdateStatus, UpdateCanViewPath, UpdateRole, UpdateExpiresAt);
 		
 		if (boxC != null)
 			return boxC.getMendixObject();

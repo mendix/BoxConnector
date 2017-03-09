@@ -50,19 +50,19 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class UpdateMetadataOnFile extends CustomJavaAction<java.lang.Boolean>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
-	private IMendixObject __BoxTemplateParameter1;
-	private boxconnector.proxies.BoxTemplate BoxTemplateParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
+	private IMendixObject __BoxTemplateParam;
+	private boxconnector.proxies.BoxTemplate BoxTemplateParam;
 	private boxconnector.proxies.MetadataScope Scope;
 	private java.util.List<IMendixObject> __UpdateMetadataList;
 	private java.util.List<boxconnector.proxies.UpdateMetadata> UpdateMetadataList;
 
-	public UpdateMetadataOnFile(IContext context, IMendixObject BoxFileParameter1, IMendixObject BoxTemplateParameter1, java.lang.String Scope, java.util.List<IMendixObject> UpdateMetadataList)
+	public UpdateMetadataOnFile(IContext context, IMendixObject BoxFileParam, IMendixObject BoxTemplateParam, java.lang.String Scope, java.util.List<IMendixObject> UpdateMetadataList)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
-		this.__BoxTemplateParameter1 = BoxTemplateParameter1;
+		this.__BoxFileParam = BoxFileParam;
+		this.__BoxTemplateParam = BoxTemplateParam;
 		this.Scope = Scope == null ? null : boxconnector.proxies.MetadataScope.valueOf(Scope);
 		this.__UpdateMetadataList = UpdateMetadataList;
 	}
@@ -70,9 +70,9 @@ public class UpdateMetadataOnFile extends CustomJavaAction<java.lang.Boolean>
 	@Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
-		this.BoxTemplateParameter1 = __BoxTemplateParameter1 == null ? null : boxconnector.proxies.BoxTemplate.initialize(getContext(), __BoxTemplateParameter1);
+		this.BoxTemplateParam = __BoxTemplateParam == null ? null : boxconnector.proxies.BoxTemplate.initialize(getContext(), __BoxTemplateParam);
 
 		this.UpdateMetadataList = new java.util.ArrayList<boxconnector.proxies.UpdateMetadata>();
 		if (__UpdateMetadataList != null)
@@ -80,7 +80,7 @@ public class UpdateMetadataOnFile extends CustomJavaAction<java.lang.Boolean>
 				this.UpdateMetadataList.add(boxconnector.proxies.UpdateMetadata.initialize(getContext(), __UpdateMetadataListElement));
 
 		// BEGIN USER CODE
-		Boolean result = updateMetadataOnFileImpl(getContext(), BoxFileParameter1, BoxTemplateParameter1, Scope, UpdateMetadataList);
+		Boolean result = updateMetadataOnFileImpl(getContext(), BoxFileParam, BoxTemplateParam, Scope, UpdateMetadataList);
 		return result;
 		// END USER CODE
 	}

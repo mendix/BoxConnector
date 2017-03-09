@@ -28,22 +28,22 @@ import java.util.LinkedList;
  */
 public class ViewVersions extends CustomJavaAction<java.util.List<IMendixObject>>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 	private java.util.List<IMendixObject> __Fields;
 	private java.util.List<boxconnector.proxies.BoxVersionFields> Fields;
 
-	public ViewVersions(IContext context, IMendixObject BoxFileParameter1, java.util.List<IMendixObject> Fields)
+	public ViewVersions(IContext context, IMendixObject BoxFileParam, java.util.List<IMendixObject> Fields)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__BoxFileParam = BoxFileParam;
 		this.__Fields = Fields;
 	}
 
 	@Override
 	public java.util.List<IMendixObject> executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		this.Fields = new java.util.ArrayList<boxconnector.proxies.BoxVersionFields>();
 		if (__Fields != null)
@@ -51,7 +51,7 @@ public class ViewVersions extends CustomJavaAction<java.util.List<IMendixObject>
 				this.Fields.add(boxconnector.proxies.BoxVersionFields.initialize(getContext(), __FieldsElement));
 
 		// BEGIN USER CODE
-		java.util.List<boxconnector.proxies.BoxFileVersion> listVersion = viewVersionsImpl(getContext(), BoxFileParameter1, Fields);
+		java.util.List<boxconnector.proxies.BoxFileVersion> listVersion = viewVersionsImpl(getContext(), BoxFileParam, Fields);
 		if(listVersion != null) {
 			java.util.List<IMendixObject> result = new LinkedList<IMendixObject>();
 			for(BoxFileVersion fileVersion : listVersion) {

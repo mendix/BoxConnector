@@ -27,22 +27,22 @@ import com.mendix.webui.CustomJavaAction;
  */
 public class GetTrashedFolder extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
 	private java.util.List<IMendixObject> __Fields;
 	private java.util.List<boxconnector.proxies.BoxItemFields> Fields;
 
-	public GetTrashedFolder(IContext context, IMendixObject BoxFolderParameter1, java.util.List<IMendixObject> Fields)
+	public GetTrashedFolder(IContext context, IMendixObject BoxFolderParam, java.util.List<IMendixObject> Fields)
 	{
 		super(context);
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
+		this.__BoxFolderParam = BoxFolderParam;
 		this.__Fields = Fields;
 	}
 
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
 		this.Fields = new java.util.ArrayList<boxconnector.proxies.BoxItemFields>();
 		if (__Fields != null)
@@ -50,7 +50,7 @@ public class GetTrashedFolder extends CustomJavaAction<IMendixObject>
 				this.Fields.add(boxconnector.proxies.BoxItemFields.initialize(getContext(), __FieldsElement));
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxFolder boxFolder = getTrashedFolderImpl(getContext(), BoxFolderParameter1, Fields);
+		boxconnector.proxies.BoxFolder boxFolder = getTrashedFolderImpl(getContext(), BoxFolderParam, Fields);
 		if (boxFolder != null)
 			return boxFolder.getMendixObject();
 		else

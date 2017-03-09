@@ -17,22 +17,22 @@ import boxconnector.proxies.AccessToken;
 
 public class RefreshToken extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __AccessTokenParameter1;
-	private boxconnector.proxies.AccessToken AccessTokenParameter1;
+	private IMendixObject __AccessTokenParam;
+	private boxconnector.proxies.AccessToken AccessTokenParam;
 
-	public RefreshToken(IContext context, IMendixObject AccessTokenParameter1)
+	public RefreshToken(IContext context, IMendixObject AccessTokenParam)
 	{
 		super(context);
-		this.__AccessTokenParameter1 = AccessTokenParameter1;
+		this.__AccessTokenParam = AccessTokenParam;
 	}
 
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.AccessTokenParameter1 = __AccessTokenParameter1 == null ? null : boxconnector.proxies.AccessToken.initialize(getContext(), __AccessTokenParameter1);
+		this.AccessTokenParam = __AccessTokenParam == null ? null : boxconnector.proxies.AccessToken.initialize(getContext(), __AccessTokenParam);
 
 		// BEGIN USER CODE
-		AccessToken token = refreshTokenImpl(getContext(), AccessTokenParameter1);
+		AccessToken token = refreshTokenImpl(getContext(), AccessTokenParam);
 		if(token != null) {
 			return token.getMendixObject();
 		} else {

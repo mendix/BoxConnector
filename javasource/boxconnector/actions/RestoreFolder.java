@@ -31,16 +31,16 @@ import static boxconnector.proxies.microflows.Microflows.restoreFolderImpl;
  */
 public class RestoreFolder extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
 	private java.lang.String Name;
 	private IMendixObject __DestBoxFolder;
 	private boxconnector.proxies.BoxFolder DestBoxFolder;
 
-	public RestoreFolder(IContext context, IMendixObject BoxFolderParameter1, java.lang.String Name, IMendixObject DestBoxFolder)
+	public RestoreFolder(IContext context, IMendixObject BoxFolderParam, java.lang.String Name, IMendixObject DestBoxFolder)
 	{
 		super(context);
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
+		this.__BoxFolderParam = BoxFolderParam;
 		this.Name = Name;
 		this.__DestBoxFolder = DestBoxFolder;
 	}
@@ -48,12 +48,12 @@ public class RestoreFolder extends CustomJavaAction<IMendixObject>
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
 		this.DestBoxFolder = __DestBoxFolder == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __DestBoxFolder);
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxFolder boxFolder = restoreFolderImpl(getContext(), BoxFolderParameter1, Name, DestBoxFolder);
+		boxconnector.proxies.BoxFolder boxFolder = restoreFolderImpl(getContext(), BoxFolderParam, Name, DestBoxFolder);
 		
 		if (boxFolder != null)
 			return boxFolder.getMendixObject();

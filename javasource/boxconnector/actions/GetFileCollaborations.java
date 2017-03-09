@@ -33,17 +33,17 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class GetFileCollaborations extends CustomJavaAction<java.util.List<IMendixObject>>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 	private java.lang.Long Limit;
 	private java.lang.Long Offset;
 	private java.util.List<IMendixObject> __Fields;
 	private java.util.List<boxconnector.proxies.BoxCollaborationFields> Fields;
 
-	public GetFileCollaborations(IContext context, IMendixObject BoxFileParameter1, java.lang.Long Limit, java.lang.Long Offset, java.util.List<IMendixObject> Fields)
+	public GetFileCollaborations(IContext context, IMendixObject BoxFileParam, java.lang.Long Limit, java.lang.Long Offset, java.util.List<IMendixObject> Fields)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__BoxFileParam = BoxFileParam;
 		this.Limit = Limit;
 		this.Offset = Offset;
 		this.__Fields = Fields;
@@ -52,7 +52,7 @@ public class GetFileCollaborations extends CustomJavaAction<java.util.List<IMend
 	@Override
 	public java.util.List<IMendixObject> executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		this.Fields = new java.util.ArrayList<boxconnector.proxies.BoxCollaborationFields>();
 		if (__Fields != null)
@@ -61,7 +61,7 @@ public class GetFileCollaborations extends CustomJavaAction<java.util.List<IMend
 
 		// BEGIN USER CODE
 		java.util.List<IMendixObject> result = new LinkedList<IMendixObject>();
-		java.util.List<boxconnector.proxies.BoxCollaboration> collaborationList = getFileCollaborationsImpl(getContext(), BoxFileParameter1, Limit, Offset, Fields);
+		java.util.List<boxconnector.proxies.BoxCollaboration> collaborationList = getFileCollaborationsImpl(getContext(), BoxFileParam, Limit, Offset, Fields);
 		
 		if (collaborationList != null) {
 			for (BoxCollaboration collaboration : collaborationList) {

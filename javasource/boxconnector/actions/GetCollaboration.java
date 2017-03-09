@@ -30,16 +30,16 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class GetCollaboration extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxCollaborationParameter1;
-	private boxconnector.proxies.BoxCollaboration BoxCollaborationParameter1;
+	private IMendixObject __BoxCollaborationParam;
+	private boxconnector.proxies.BoxCollaboration BoxCollaborationParam;
 	private java.util.List<IMendixObject> __Fields;
 	private java.util.List<boxconnector.proxies.BoxCollaborationFields> Fields;
 	private java.lang.Boolean PendingStatus;
 
-	public GetCollaboration(IContext context, IMendixObject BoxCollaborationParameter1, java.util.List<IMendixObject> Fields, java.lang.Boolean PendingStatus)
+	public GetCollaboration(IContext context, IMendixObject BoxCollaborationParam, java.util.List<IMendixObject> Fields, java.lang.Boolean PendingStatus)
 	{
 		super(context);
-		this.__BoxCollaborationParameter1 = BoxCollaborationParameter1;
+		this.__BoxCollaborationParam = BoxCollaborationParam;
 		this.__Fields = Fields;
 		this.PendingStatus = PendingStatus;
 	}
@@ -47,7 +47,7 @@ public class GetCollaboration extends CustomJavaAction<IMendixObject>
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxCollaborationParameter1 = __BoxCollaborationParameter1 == null ? null : boxconnector.proxies.BoxCollaboration.initialize(getContext(), __BoxCollaborationParameter1);
+		this.BoxCollaborationParam = __BoxCollaborationParam == null ? null : boxconnector.proxies.BoxCollaboration.initialize(getContext(), __BoxCollaborationParam);
 
 		this.Fields = new java.util.ArrayList<boxconnector.proxies.BoxCollaborationFields>();
 		if (__Fields != null)
@@ -55,7 +55,7 @@ public class GetCollaboration extends CustomJavaAction<IMendixObject>
 				this.Fields.add(boxconnector.proxies.BoxCollaborationFields.initialize(getContext(), __FieldsElement));
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxCollaboration boxCollaboration = getCollaborationImpl(getContext(), BoxCollaborationParameter1, Fields, PendingStatus);
+		boxconnector.proxies.BoxCollaboration boxCollaboration = getCollaborationImpl(getContext(), BoxCollaborationParam, Fields, PendingStatus);
 		
 		if (boxCollaboration != null)
 			return boxCollaboration.getMendixObject();

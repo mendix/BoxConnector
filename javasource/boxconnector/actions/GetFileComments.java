@@ -28,22 +28,22 @@ import boxconnector.proxies.BoxComment;
  */
 public class GetFileComments extends CustomJavaAction<java.util.List<IMendixObject>>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 	private java.util.List<IMendixObject> __Fields;
 	private java.util.List<boxconnector.proxies.BoxCommentFields> Fields;
 
-	public GetFileComments(IContext context, IMendixObject BoxFileParameter1, java.util.List<IMendixObject> Fields)
+	public GetFileComments(IContext context, IMendixObject BoxFileParam, java.util.List<IMendixObject> Fields)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__BoxFileParam = BoxFileParam;
 		this.__Fields = Fields;
 	}
 
 	@Override
 	public java.util.List<IMendixObject> executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		this.Fields = new java.util.ArrayList<boxconnector.proxies.BoxCommentFields>();
 		if (__Fields != null)
@@ -52,7 +52,7 @@ public class GetFileComments extends CustomJavaAction<java.util.List<IMendixObje
 
 		// BEGIN USER CODE
 		java.util.List<IMendixObject> result = new LinkedList<IMendixObject>();
-		java.util.List<boxconnector.proxies.BoxComment> boxCommentList = getFileCommentsImpl(getContext(), BoxFileParameter1, Fields);
+		java.util.List<boxconnector.proxies.BoxComment> boxCommentList = getFileCommentsImpl(getContext(), BoxFileParam, Fields);
 		
 		if (boxCommentList != null) {
 			for (BoxComment comment : boxCommentList) {

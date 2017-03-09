@@ -19,24 +19,24 @@ public class GetToken extends CustomJavaAction<IMendixObject>
 {
 	private java.lang.String Code;
 	private java.lang.String State;
-	private IMendixObject __BoxApplicationParameter1;
-	private boxconnector.proxies.BoxApplication BoxApplicationParameter1;
+	private IMendixObject __BoxApplicationParam;
+	private boxconnector.proxies.BoxApplication BoxApplicationParam;
 
-	public GetToken(IContext context, java.lang.String Code, java.lang.String State, IMendixObject BoxApplicationParameter1)
+	public GetToken(IContext context, java.lang.String Code, java.lang.String State, IMendixObject BoxApplicationParam)
 	{
 		super(context);
 		this.Code = Code;
 		this.State = State;
-		this.__BoxApplicationParameter1 = BoxApplicationParameter1;
+		this.__BoxApplicationParam = BoxApplicationParam;
 	}
 
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxApplicationParameter1 = __BoxApplicationParameter1 == null ? null : boxconnector.proxies.BoxApplication.initialize(getContext(), __BoxApplicationParameter1);
+		this.BoxApplicationParam = __BoxApplicationParam == null ? null : boxconnector.proxies.BoxApplication.initialize(getContext(), __BoxApplicationParam);
 
 		// BEGIN USER CODE
-		AccessToken token = getTokenImpl(getContext(), Code, State, BoxApplicationParameter1);
+		AccessToken token = getTokenImpl(getContext(), Code, State, BoxApplicationParam);
 
 		if(token != null) {
 			return token.getMendixObject();

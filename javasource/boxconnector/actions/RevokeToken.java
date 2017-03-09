@@ -19,22 +19,22 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class RevokeToken extends CustomJavaAction<java.lang.Boolean>
 {
-	private IMendixObject __AccessTokenParameter1;
-	private boxconnector.proxies.AccessToken AccessTokenParameter1;
+	private IMendixObject __AccessTokenParam;
+	private boxconnector.proxies.AccessToken AccessTokenParam;
 
-	public RevokeToken(IContext context, IMendixObject AccessTokenParameter1)
+	public RevokeToken(IContext context, IMendixObject AccessTokenParam)
 	{
 		super(context);
-		this.__AccessTokenParameter1 = AccessTokenParameter1;
+		this.__AccessTokenParam = AccessTokenParam;
 	}
 
 	@Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
-		this.AccessTokenParameter1 = __AccessTokenParameter1 == null ? null : boxconnector.proxies.AccessToken.initialize(getContext(), __AccessTokenParameter1);
+		this.AccessTokenParam = __AccessTokenParam == null ? null : boxconnector.proxies.AccessToken.initialize(getContext(), __AccessTokenParam);
 
 		// BEGIN USER CODE
-		Boolean result = revokeTokenImpl(getContext(), AccessTokenParameter1);
+		Boolean result = revokeTokenImpl(getContext(), AccessTokenParam);
 		return result;
 		// END USER CODE
 	}

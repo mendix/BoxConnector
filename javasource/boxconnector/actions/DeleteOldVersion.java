@@ -29,15 +29,15 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class DeleteOldVersion extends CustomJavaAction<java.lang.Boolean>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 	private java.lang.String Version;
 	private java.lang.String IfMatchEtag;
 
-	public DeleteOldVersion(IContext context, IMendixObject BoxFileParameter1, java.lang.String Version, java.lang.String IfMatchEtag)
+	public DeleteOldVersion(IContext context, IMendixObject BoxFileParam, java.lang.String Version, java.lang.String IfMatchEtag)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__BoxFileParam = BoxFileParam;
 		this.Version = Version;
 		this.IfMatchEtag = IfMatchEtag;
 	}
@@ -45,10 +45,10 @@ public class DeleteOldVersion extends CustomJavaAction<java.lang.Boolean>
 	@Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		// BEGIN USER CODE
-		Boolean result = deleteOldVersionImpl(getContext(), BoxFileParameter1, Version, IfMatchEtag);
+		Boolean result = deleteOldVersionImpl(getContext(), BoxFileParam, Version, IfMatchEtag);
 		return result;
 		// END USER CODE
 	}

@@ -31,16 +31,16 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class RestoreFile extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 	private java.lang.String Name;
 	private IMendixObject __DestBoxFolder;
 	private boxconnector.proxies.BoxFolder DestBoxFolder;
 
-	public RestoreFile(IContext context, IMendixObject BoxFileParameter1, java.lang.String Name, IMendixObject DestBoxFolder)
+	public RestoreFile(IContext context, IMendixObject BoxFileParam, java.lang.String Name, IMendixObject DestBoxFolder)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__BoxFileParam = BoxFileParam;
 		this.Name = Name;
 		this.__DestBoxFolder = DestBoxFolder;
 	}
@@ -48,12 +48,12 @@ public class RestoreFile extends CustomJavaAction<IMendixObject>
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		this.DestBoxFolder = __DestBoxFolder == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __DestBoxFolder);
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxFile boxFile = restoreFileImpl(getContext(), BoxFileParameter1, Name, DestBoxFolder);
+		boxconnector.proxies.BoxFile boxFile = restoreFileImpl(getContext(), BoxFileParam, Name, DestBoxFolder);
 		
 		if (boxFile != null)
 			return boxFile.getMendixObject();

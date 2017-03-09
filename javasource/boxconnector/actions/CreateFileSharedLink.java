@@ -36,27 +36,27 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class CreateFileSharedLink extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
-	private IMendixObject __SharedLinkParameter1;
-	private boxconnector.proxies.SharedLink SharedLinkParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
+	private IMendixObject __SharedLinkParam;
+	private boxconnector.proxies.SharedLink SharedLinkParam;
 
-	public CreateFileSharedLink(IContext context, IMendixObject BoxFileParameter1, IMendixObject SharedLinkParameter1)
+	public CreateFileSharedLink(IContext context, IMendixObject BoxFileParam, IMendixObject SharedLinkParam)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
-		this.__SharedLinkParameter1 = SharedLinkParameter1;
+		this.__BoxFileParam = BoxFileParam;
+		this.__SharedLinkParam = SharedLinkParam;
 	}
 
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
-		this.SharedLinkParameter1 = __SharedLinkParameter1 == null ? null : boxconnector.proxies.SharedLink.initialize(getContext(), __SharedLinkParameter1);
+		this.SharedLinkParam = __SharedLinkParam == null ? null : boxconnector.proxies.SharedLink.initialize(getContext(), __SharedLinkParam);
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxFile boxFile = createFileSharedLinkImpl(getContext(), BoxFileParameter1, SharedLinkParameter1);
+		boxconnector.proxies.BoxFile boxFile = createFileSharedLinkImpl(getContext(), BoxFileParam, SharedLinkParam);
 		
 		if (boxFile != null)
 			return boxFile.getMendixObject();

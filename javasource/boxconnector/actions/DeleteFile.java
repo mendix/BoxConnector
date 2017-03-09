@@ -26,24 +26,24 @@ import static boxconnector.proxies.microflows.Microflows.deleteFileImpl;
  */
 public class DeleteFile extends CustomJavaAction<java.lang.Boolean>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 	private java.lang.String IfMatchEtag;
 
-	public DeleteFile(IContext context, IMendixObject BoxFileParameter1, java.lang.String IfMatchEtag)
+	public DeleteFile(IContext context, IMendixObject BoxFileParam, java.lang.String IfMatchEtag)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__BoxFileParam = BoxFileParam;
 		this.IfMatchEtag = IfMatchEtag;
 	}
 
 	@Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		// BEGIN USER CODE
-		Boolean result = deleteFileImpl(getContext(), BoxFileParameter1, IfMatchEtag);
+		Boolean result = deleteFileImpl(getContext(), BoxFileParam, IfMatchEtag);
 		return result;
 		// END USER CODE
 	}

@@ -23,22 +23,22 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class DeleteCollaboration extends CustomJavaAction<java.lang.Boolean>
 {
-	private IMendixObject __BoxCollaborationParameter1;
-	private boxconnector.proxies.BoxCollaboration BoxCollaborationParameter1;
+	private IMendixObject __BoxCollaborationParam;
+	private boxconnector.proxies.BoxCollaboration BoxCollaborationParam;
 
-	public DeleteCollaboration(IContext context, IMendixObject BoxCollaborationParameter1)
+	public DeleteCollaboration(IContext context, IMendixObject BoxCollaborationParam)
 	{
 		super(context);
-		this.__BoxCollaborationParameter1 = BoxCollaborationParameter1;
+		this.__BoxCollaborationParam = BoxCollaborationParam;
 	}
 
 	@Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
-		this.BoxCollaborationParameter1 = __BoxCollaborationParameter1 == null ? null : boxconnector.proxies.BoxCollaboration.initialize(getContext(), __BoxCollaborationParameter1);
+		this.BoxCollaborationParam = __BoxCollaborationParam == null ? null : boxconnector.proxies.BoxCollaboration.initialize(getContext(), __BoxCollaborationParam);
 
 		// BEGIN USER CODE
-		Boolean result = deleteCollaborationImpl(getContext(), BoxCollaborationParameter1);
+		Boolean result = deleteCollaborationImpl(getContext(), BoxCollaborationParam);
 		return result;
 		// END USER CODE
 	}

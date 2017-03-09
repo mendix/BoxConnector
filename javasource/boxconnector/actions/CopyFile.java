@@ -32,17 +32,17 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
  */
 public class CopyFile extends CustomJavaAction<IMendixObject>
 {
-	private IMendixObject __BoxFileParameter1;
-	private boxconnector.proxies.BoxFile BoxFileParameter1;
+	private IMendixObject __BoxFileParam;
+	private boxconnector.proxies.BoxFile BoxFileParam;
 	private IMendixObject __DestBoxFolder;
 	private boxconnector.proxies.BoxFolder DestBoxFolder;
 	private java.lang.String Version;
 	private java.lang.String Name;
 
-	public CopyFile(IContext context, IMendixObject BoxFileParameter1, IMendixObject DestBoxFolder, java.lang.String Version, java.lang.String Name)
+	public CopyFile(IContext context, IMendixObject BoxFileParam, IMendixObject DestBoxFolder, java.lang.String Version, java.lang.String Name)
 	{
 		super(context);
-		this.__BoxFileParameter1 = BoxFileParameter1;
+		this.__BoxFileParam = BoxFileParam;
 		this.__DestBoxFolder = DestBoxFolder;
 		this.Version = Version;
 		this.Name = Name;
@@ -51,12 +51,12 @@ public class CopyFile extends CustomJavaAction<IMendixObject>
 	@Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.BoxFileParameter1 = __BoxFileParameter1 == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParameter1);
+		this.BoxFileParam = __BoxFileParam == null ? null : boxconnector.proxies.BoxFile.initialize(getContext(), __BoxFileParam);
 
 		this.DestBoxFolder = __DestBoxFolder == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __DestBoxFolder);
 
 		// BEGIN USER CODE
-		boxconnector.proxies.BoxFile boxFile = copyFileImpl(getContext(), BoxFileParameter1, DestBoxFolder, Version, Name);
+		boxconnector.proxies.BoxFile boxFile = copyFileImpl(getContext(), BoxFileParam, DestBoxFolder, Version, Name);
 		
 		if (boxFile != null)
 			return boxFile.getMendixObject();

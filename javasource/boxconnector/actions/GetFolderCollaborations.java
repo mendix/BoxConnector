@@ -33,17 +33,17 @@ import boxconnector.proxies.BoxCollaboration;
  */
 public class GetFolderCollaborations extends CustomJavaAction<java.util.List<IMendixObject>>
 {
-	private IMendixObject __BoxFolderParameter1;
-	private boxconnector.proxies.BoxFolder BoxFolderParameter1;
+	private IMendixObject __BoxFolderParam;
+	private boxconnector.proxies.BoxFolder BoxFolderParam;
 	private java.lang.Long Limit;
 	private java.lang.Long Offset;
 	private java.util.List<IMendixObject> __Fields;
 	private java.util.List<boxconnector.proxies.BoxCollaborationFields> Fields;
 
-	public GetFolderCollaborations(IContext context, IMendixObject BoxFolderParameter1, java.lang.Long Limit, java.lang.Long Offset, java.util.List<IMendixObject> Fields)
+	public GetFolderCollaborations(IContext context, IMendixObject BoxFolderParam, java.lang.Long Limit, java.lang.Long Offset, java.util.List<IMendixObject> Fields)
 	{
 		super(context);
-		this.__BoxFolderParameter1 = BoxFolderParameter1;
+		this.__BoxFolderParam = BoxFolderParam;
 		this.Limit = Limit;
 		this.Offset = Offset;
 		this.__Fields = Fields;
@@ -52,7 +52,7 @@ public class GetFolderCollaborations extends CustomJavaAction<java.util.List<IMe
 	@Override
 	public java.util.List<IMendixObject> executeAction() throws Exception
 	{
-		this.BoxFolderParameter1 = __BoxFolderParameter1 == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParameter1);
+		this.BoxFolderParam = __BoxFolderParam == null ? null : boxconnector.proxies.BoxFolder.initialize(getContext(), __BoxFolderParam);
 
 		this.Fields = new java.util.ArrayList<boxconnector.proxies.BoxCollaborationFields>();
 		if (__Fields != null)
@@ -62,7 +62,7 @@ public class GetFolderCollaborations extends CustomJavaAction<java.util.List<IMe
 		// BEGIN USER CODE
 		java.util.List<IMendixObject> result = new LinkedList<IMendixObject>();
 		java.util.List<boxconnector.proxies.BoxCollaboration> collaborationList = getFolderCollaborationsImpl(
-				getContext(), BoxFolderParameter1, Limit, Offset, Fields);
+				getContext(), BoxFolderParam, Limit, Offset, Fields);
 
 		if (collaborationList != null) {
 			for (BoxCollaboration collaboration : collaborationList) {
